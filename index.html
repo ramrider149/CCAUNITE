@@ -445,15 +445,31 @@
   const confirm = document.getElementById('signup-confirm');
   const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdcMQ21oTT1dvrPcbNhABoGJHmr3hV4Z8mznthSBgY8KlYg8g/formResponse';
   const GOOGLE_FORM_EMAIL_FIELD = 'entry.113313207';
+
+  // Hidden iframe + real form POST (not fetch) so the browser treats this as a
+  // normal cross-site form submission rather than an API call Google can throttle.
+  const hiddenIframe = document.createElement('iframe');
+  hiddenIframe.name = 'signup-target-frame';
+  hiddenIframe.style.display = 'none';
+  document.body.appendChild(hiddenIframe);
+
+  const hiddenForm = document.createElement('form');
+  hiddenForm.action = GOOGLE_FORM_ACTION;
+  hiddenForm.method = 'POST';
+  hiddenForm.target = 'signup-target-frame';
+  hiddenForm.style.display = 'none';
+
+  const hiddenInput = document.createElement('input');
+  hiddenInput.type = 'hidden';
+  hiddenInput.name = GOOGLE_FORM_EMAIL_FIELD;
+  hiddenForm.appendChild(hiddenInput);
+  document.body.appendChild(hiddenForm);
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     const email = document.getElementById('signup-email').value;
-    const data = new URLSearchParams();
-    data.append(GOOGLE_FORM_EMAIL_FIELD, email);
-    fetch(GOOGLE_FORM_ACTION + '?' + data.toString(), {
-      method: 'GET',
-      mode: 'no-cors'
-    }).catch(function(err){ console.error('Signup submission failed:', err); });
+    hiddenInput.value = email;
+    hiddenForm.submit();
     confirm.style.display = 'block';
     form.reset();
   });
