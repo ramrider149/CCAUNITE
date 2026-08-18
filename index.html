@@ -440,11 +440,22 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  // Signup form (front-end only placeholder)
+  // Signup form -> sends entries to the CCA UNITE Google Form (ccauniteofficial@gmail.com has access)
   const form = document.getElementById('signup-form');
   const confirm = document.getElementById('signup-confirm');
+  const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdcMQ21oTT1dvrPcbNhABoGJHmr3hV4Z8mznthSBgY8KlYg8g/formResponse';
+  const GOOGLE_FORM_EMAIL_FIELD = 'entry.113313207';
   form.addEventListener('submit', function(e){
     e.preventDefault();
+    const email = document.getElementById('signup-email').value;
+    const data = new URLSearchParams();
+    data.append(GOOGLE_FORM_EMAIL_FIELD, email);
+    fetch(GOOGLE_FORM_ACTION, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: data.toString()
+    }).catch(function(err){ console.error('Signup submission failed:', err); });
     confirm.style.display = 'block';
     form.reset();
   });
