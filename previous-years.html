@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCA UNITE: Previous Years</title>
+<meta name="description" content="A look back at CCA UNITE's past events, speakers, and teams since 2017.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FBF1DC;
+    --bg-panel: #F5E4BE;
+    --bg-panel-2: #FFFBF1;
+    --gold: #D9A233;
+    --orange: #E08A3B;
+    --ember: #C15B26;
+    --plum: #9C5A2E;
+    --cream: #3B2712;
+    --dim: #6E5335;
+    --line: rgba(59,39,18,0.14);
+    --max: 1080px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse 800px 500px at 50% 0%, rgba(217,162,51,0.22), transparent 60%),
+      var(--bg);
+    color:var(--cream);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-optical-sizing:auto;
+    font-weight:600;
+    margin:0;
+    letter-spacing:-0.015em;
+    text-wrap:balance;
+  }
+  p{
+    line-height:1.7;
+    color:var(--dim);
+    margin:0;
+    font-size:1.02rem;
+    text-wrap:pretty;
+    max-width:60ch;
+  }
+  a{ color:inherit; text-decoration:none; }
+  .eyebrow{
+    font-family:'Inter', sans-serif;
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+  }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+  section{ position:relative; padding:96px 0; }
+  @media (max-width:640px){ section{ padding:64px 0; } }
+
+  /* ---------- nav ---------- */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    backdrop-filter:blur(10px);
+    background:rgba(251,241,220,0.8);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+  }
+  .brand{ font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem; }
+  .brand span{ color:var(--gold); }
+  .navlinks{ display:flex; gap:28px; font-size:0.85rem; color:var(--dim); }
+  .navlinks a:hover{ color:var(--cream); }
+  @media (max-width:820px){ .navlinks{ display:none; } }
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:62svh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    padding-top:140px;
+    padding-bottom:60px;
+    position:relative;
+  }
+  .hero-glow{
+    position:absolute; top:30%; left:50%; transform:translate(-50%,-50%);
+    width:520px; height:520px;
+    background:radial-gradient(circle, rgba(217,162,51,0.30), rgba(224,138,59,0.14) 45%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-content{ position:relative; z-index:2; max-width:760px; }
+  .hero .eyebrow{ display:block; margin-bottom:20px; }
+  .hero h1{
+    font-size:clamp(2.6rem, 7vw, 4.6rem);
+    line-height:1.02;
+    background:linear-gradient(100deg, var(--gold) 0%, var(--orange) 55%, var(--ember) 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero .tagline{
+    margin-top:22px; font-size:1.08rem; max-width:560px;
+    margin-left:auto; margin-right:auto;
+  }
+  .hero .meta{
+    margin-top:32px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;
+    font-size:0.85rem;
+  }
+  .pill{
+    border:1px solid var(--line);
+    padding:9px 18px; border-radius:100px;
+    color:var(--cream);
+    background:rgba(255,255,255,0.55);
+  }
+  .hero-ctas{ margin-top:34px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+  .btn{
+    display:inline-block;
+    padding:16px 38px;
+    border-radius:100px;
+    background:linear-gradient(100deg, var(--gold), var(--orange));
+    color:#2B1B0A;
+    font-weight:600;
+    font-size:0.95rem;
+    box-shadow:0 8px 28px rgba(224,138,59,0.35);
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+    border:none;
+    cursor:pointer;
+    font-family:'Inter', sans-serif;
+  }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 10px 34px rgba(224,138,59,0.45); }
+  .btn-outline{
+    display:inline-block;
+    padding:15px 34px;
+    border-radius:100px;
+    border:1px solid var(--line);
+    color:var(--cream);
+    font-weight:500;
+    font-size:0.9rem;
+    transition:border-color 0.2s ease, color 0.2s ease;
+  }
+  .btn-outline:hover{ border-color:var(--gold); color:var(--gold); }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{ opacity:0; transform:translateY(20px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- section heading ---------- */
+  .section-head{ text-align:center; max-width:680px; margin:0 auto 56px; }
+  .section-head h2{ font-size:clamp(1.9rem,4vw,2.6rem); margin-top:14px; }
+  .section-head p{ margin-top:16px; font-size:1rem; margin-left:auto; margin-right:auto; }
+
+  /* ---------- our story ---------- */
+  .story{ background:var(--bg-panel); }
+  .story-body{ max-width:720px; margin:0 auto; text-align:center; }
+  .story-body p + p{ margin-top:16px; }
+  .story-body p{ max-width:none; }
+
+  /* ---------- year block ---------- */
+  .year-head{ text-align:center; max-width:720px; margin:0 auto 20px; }
+  .year-head .eyebrow{ margin-bottom:14px; }
+  .year-head h2{ font-size:clamp(2.1rem,5vw,3rem); }
+  .year-head p{ margin:16px auto 0; }
+  .year-meta{ margin-top:20px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center; font-size:0.85rem; }
+
+  .itinerary{ max-width:640px; margin:44px auto 0; }
+  .itinerary-item{
+    display:flex; gap:24px; align-items:flex-start;
+    padding:16px 0; border-bottom:1px solid var(--line);
+    font-size:0.9rem;
+  }
+  .itinerary-item:last-child{ border-bottom:none; }
+  .itinerary-time{ min-width:140px; font-family:'Fraunces', serif; color:var(--gold); font-size:0.92rem; }
+  .itinerary-body p{ font-size:0.9rem; max-width:none; }
+
+  .subhead{ text-align:center; margin:64px auto 36px; max-width:640px; }
+  .subhead .eyebrow{ margin-bottom:10px; }
+  .subhead h3{ font-size:clamp(1.4rem,3vw,1.8rem); }
+
+  .bio-grid{ display:grid; grid-template-columns:1fr 1fr; gap:32px 40px; }
+  @media (max-width:760px){ .bio-grid{ grid-template-columns:1fr; } }
+  .bio-card{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 26px;
+    background:var(--bg-panel-2);
+  }
+  .bio-card h4{ font-family:'Fraunces', serif; font-weight:600; font-size:1.08rem; margin:0 0 8px; }
+  .bio-card p{ font-size:0.88rem; max-width:none; }
+  .bio-card .role{ display:block; font-size:0.74rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+
+  .team-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; max-width:820px; margin:0 auto; }
+  @media (max-width:720px){ .team-grid{ grid-template-columns:repeat(2, 1fr); } }
+  .team-card{ text-align:center; padding:18px 10px; }
+  .team-card .name{ font-family:'Fraunces', serif; font-weight:600; font-size:0.95rem; }
+  .team-card .role{ display:block; font-size:0.74rem; color:var(--dim); margin-top:4px; }
+
+  .divider{ max-width:var(--max); margin:0 auto; border:none; border-top:1px solid var(--line); }
+
+  .ccatv-note{
+    max-width:520px; margin:44px auto 0; text-align:center;
+    border:1px solid var(--line); border-radius:14px; padding:22px 26px;
+    background:var(--bg-panel-2);
+  }
+  .ccatv-note p{ margin:0 auto; font-size:0.88rem; }
+
+  /* ---------- footer (matches main site) ---------- */
+  footer{ border-top:1px solid var(--line); padding:56px 0 36px; }
+  .footer-grid{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    flex-wrap:wrap; gap:32px; margin-bottom:40px;
+  }
+  .footer-brand h3{ font-size:1.25rem; margin-bottom:10px; }
+  .footer-brand p{ max-width:300px; font-size:0.88rem; }
+  .footer-col .eyebrow{ display:block; margin-bottom:14px; }
+  .footer-col a{ display:block; color:var(--dim); font-size:0.9rem; margin-bottom:10px; transition:color 0.2s ease; }
+  .footer-col a:hover{ color:var(--gold); }
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+    padding-top:24px; border-top:1px solid var(--line);
+    font-size:0.76rem; color:var(--dim);
+  }
+  .socials{ display:flex; gap:14px; }
+  .socials a{
+    width:36px; height:36px; border-radius:50%; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    transition:border-color 0.2s ease, color 0.2s ease;
+  }
+  .socials a:hover{ border-color:var(--gold); color:var(--gold); }
+  .socials svg{ width:15px; height:15px; }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ transition:none; opacity:1; transform:none; }
+  }
+  a:focus-visible, .btn:focus-visible, .btn-outline:focus-visible, .socials a:focus-visible{
+    outline:2px solid var(--gold); outline-offset:3px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">CCA <span>UNITE</span></a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="#story">Our Story</a>
+      <a href="#flourish">2025 · Flourish</a>
+      <a href="#archive">2017–2019</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-content">
+    <span class="eyebrow">CCA UNITE Archive</span>
+    <h1>Previous Years</h1>
+    <p class="tagline">Every theme, every speaker, every team that helped this event grow since it began in 2017.</p>
+    <div class="meta">
+      <span class="pill">Founded 2017</span>
+      <span class="pill">3 Events Documented</span>
+      <span class="pill">19+ Speakers</span>
+    </div>
+    <div class="hero-ctas">
+      <a class="btn-outline" href="index.html">← Back to Radiance (2026)</a>
+    </div>
+  </div>
+</header>
+
+<section id="story" class="story reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How It Started</span>
+      <h2>Our Story</h2>
+    </div>
+    <div class="story-body">
+      <p>In 2017, juniors Aadil Rehan and Melody Li and sophomore Catherine Zhang founded UNITE. Ever since, UNITE has been an annual event serving students, parents, and community members. We seek to spread the spirit of innovation and discovery through the unification of the many different individuals attending, and are proud to feature an opportunity for students and speakers alike to inspire and be inspired.</p>
+      <p>In 2025 &mdash; after a 3-year hiatus &mdash; seniors Aadi Jariwala, Kaelyn Liu, and Lucas Han assembled a team to bring UNITE back to CCA. This time with the theme of "Flourish": challenging what it means to thrive by looking beyond traditional success. The team redesigned CCA UNITE as a TEDx-style conference featuring student, alumni, and industry speakers, coupled with a robust club-day event, student performances, and non-traditional career interest exploration.</p>
+    </div>
+  </div>
+</section>
+
+<section id="flourish" class="reveal">
+  <div class="wrap">
+    <div class="year-head">
+      <span class="eyebrow">October 24, 2025</span>
+      <h2>CCA UNITE 2025: Flourish</h2>
+      <p>Celebrating the many paths to success so everyone can thrive in their own way &mdash; exploring what it means to flourish beyond traditional achievement, through mental strength, creativity, or something entirely different.</p>
+      <div class="year-meta">
+        <span class="pill">4:30 PM – 9:00 PM</span>
+        <span class="pill">5951 Village Center Loop Rd, San Diego, CA 92130</span>
+      </div>
+    </div>
+
+    <div class="itinerary">
+      <div class="itinerary-item">
+        <div class="itinerary-time">4:30 – 6:00 PM</div>
+        <div class="itinerary-body"><p><strong>Club Fest | Dinner | Performance</strong></p></div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-time">6:00 – 6:15 PM</div>
+        <div class="itinerary-body"><p><strong>Opening | Welcome</strong></p></div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-time">6:20 – 7:00 PM</div>
+        <div class="itinerary-body"><p><strong>Keynote Presentation (Part I)</strong></p></div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-time">7:15 – 8:05 PM</div>
+        <div class="itinerary-body"><p><strong>Keynote Presentation (Part II)</strong></p></div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-time">8:05 – 8:15 PM</div>
+        <div class="itinerary-body"><p><strong>Closing | Guest Departure</strong></p></div>
+      </div>
+      <div class="itinerary-item">
+        <div class="itinerary-time">8:15 – 9:00 PM</div>
+        <div class="itinerary-body"><p><strong>Networking Reception | Dessert</strong></p></div>
+      </div>
+    </div>
+
+    <div class="subhead">
+      <span class="eyebrow">2025 Speakers</span>
+      <h3>Inspirational voices from CCA and beyond</h3>
+    </div>
+    <div class="bio-grid">
+      <div class="bio-card">
+        <h4>Shahriar Afshar</h4>
+        <p>Founder and CEO of the Autism Innovation Lab, leading national efforts to advance inclusive housing, business, and innovation for the autism and IDD community. A retired public servant with over 30 years in public-private partnerships, he previously served as the Port of San Diego's Director of Government &amp; Civic Relations and project lead for the $500 million San Diego Convention Center Expansion Project, and spent five years with Verizon managing municipal engagement initiatives across Southern California. He has founded and led multiple nonprofits, from local food pantries to national trade associations in Washington DC, and is a frequent media contributor and requested speaker on public policy, innovation, and inclusion.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Jeff Szekeres</h4>
+        <p>Co-Founder and CEO of Compete for Causes LLC, driving strategy and executing philanthropic fitness events. He works full-time in Corporate Development at Danaher Corporation (NYSE: DHR). Jeff received an MBA in Finance with Honors from the Wharton School, a Master of Biotechnology from the University of Pennsylvania, and a bachelor's degree in human biology and genetics from Stanford University. He lives in Solana Beach, CA with his wife and three children.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Linda Litteral</h4>
+        <p>A multi-faceted artist working across multiple media, with an MFA from San Diego State University. Her thesis explored art as a way to expose and heal childhood abuse. She has taught at SDSU, Mesa, Miramar, Grossmont, and Southwestern Colleges, as well as art-healing classes at Las Colinas, East Mesa, and Donovan State detention centers. She is a member of Allied Craftsman and emeritus director of the Feminist Image Group, and author of <em>Show and Tell: Healing from Trauma through Art</em>.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Michael Cherman</h4>
+        <p>Designer, entrepreneur, and creative director best known as the founder of Market Studios (formerly Chinatown Market), a Los Angeles-based design studio recognized for collaborations with Converse, Crocs, Smiley, and the Grateful Dead. Known for blending streetwear, sport, and culture, Cherman combines design and storytelling to build products and experiences with a modern take on nostalgia.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Gabriella Bigler</h4>
+        <p>A 16-year-old junior at CCA who has lived in San Diego for five years and is passionate about community involvement. An athlete, student, and artist who is also legally blind due to various eye conditions since birth, she has learned to embrace her impairment and flourish in new ways through it.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Ethan Leem</h4>
+        <p>A sixteen-year-old junior at Canyon Crest Academy passionate about indigenous studies, who began working with the Maasai tribe in Kenya this year to learn about and bring their philosophies to the Western world. Ethan believes indigenous knowledge can create scalable solutions to the world's modern problems.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Daniel Zhang</h4>
+        <p>Co-Founder and President of STEAMLabs International, having led 30+ free science nights and camps, grown 11 chapters across the U.S. and abroad, and built a team of 100+ volunteers reaching thousands of underserved students. A High School Affiliate Scholar at the UC Davis Comprehensive Cancer Center, he also directs a music outreach program for seniors and has performed at Carnegie Hall and Tokyo Opera Hall as an all-state pianist.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Avani Goyal</h4>
+        <p>A sophomore at CCA who thrives on exploring the intersections of creativity, leadership, and innovation, from building robots to planning events. Her talk explores the beauty of individuality and why success isn't a "one size fits all," inspiring others to flourish on their own terms.</p>
+      </div>
+    </div>
+
+    <div class="subhead">
+      <span class="eyebrow">2025 Team</span>
+      <h3>Thank you to Mr. Killeen for making this possible</h3>
+    </div>
+    <div class="team-grid">
+      <div class="team-card"><div class="name">Aadi Jariwala</div><span class="role">Co-Director</span></div>
+      <div class="team-card"><div class="name">Lucas Han</div><span class="role">Co-Director</span></div>
+      <div class="team-card"><div class="name">Kaelyn Liu</div><span class="role">Co-Director</span></div>
+      <div class="team-card"><div class="name">Mehran Sorourian</div><span class="role">Advisor</span></div>
+      <div class="team-card"><div class="name">Brian Baum</div><span class="role">Advisor</span></div>
+      <div class="team-card"><div class="name">Megan Zhou</div><span class="role">Outreach Lead</span></div>
+      <div class="team-card"><div class="name">Sanay Agarkar</div><span class="role">Logistics Lead</span></div>
+      <div class="team-card"><div class="name">Isha Popat</div><span class="role">Logistics Lead</span></div>
+      <div class="team-card"><div class="name">Adam Wu</div><span class="role">Sponsors Lead</span></div>
+      <div class="team-card"><div class="name">Niranjan Deshpande</div><span class="role">Tech Lead</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="archive" class="reveal" style="background:var(--bg-panel);">
+  <div class="wrap">
+    <div class="year-head">
+      <span class="eyebrow">The Early Years</span>
+      <h2>2017 – 2019</h2>
+      <p>Before the hiatus, UNITE ran for two consecutive years, bringing athletes, authors, artists, and CCA students to the stage.</p>
+    </div>
+
+    <div class="subhead">
+      <span class="eyebrow">2018–2019 Speakers</span>
+      <h3>Featured voices from UNITE's second year</h3>
+    </div>
+    <div class="bio-grid">
+      <div class="bio-card">
+        <h4>Richard Kuo</h4>
+        <p>A youth inspirational speaker, mentor, and YouTuber with over 1 million video views. Featured at TEDx and invited to speak at over 100 schools across the United States, Richard uses his own story of overcoming low self-esteem and negative self-talk to empower students to take ownership of their lives.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Viet Mai</h4>
+        <p>An educator, poet, and entrepreneur from San Diego who found his voice through spoken word poetry. He connects with community leaders throughout San Diego to inspire young people, promote civic engagement, and elevate social consciousness, and currently serves with the Village of Promise Collective Mentoring Program.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Jennifer Purdie</h4>
+        <p>Author of the bestselling <em>Growth Mindset for Athletes, Coaches and Trainers</em>, a freelance writer, endurance athlete, TEDx speaker, and certified personal trainer. An Ironman finisher and one of the first Americans to complete marathons on every continent, she has written for the LA Times, Washington Post, and more.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Chris Hamilton</h4>
+        <p>Began teaching 18th and 19th Century British Literature at UCLA before moving into SAT/ACT instruction in 1998. Over the last decade he has founded or co-founded three education companies devoted to skills-based test prep and college consulting, helping students earn admission to Harvard and other top schools.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Sofia Perri</h4>
+        <p>A senior at Canyon Crest Academy involved in Associated Student Body, Varsity Soccer, and ADL's No Place for Hate Club, among many other activities. She continued her education at the University of Michigan in Ann Arbor, studying Sport Management.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Alexander Simone</h4>
+        <p>A San Francisco-based entrepreneur, inventor, and designer who grew up in San Diego and attended Canyon Crest Academy. Alexander founded Pronto Concepts Inc in 2016 and appeared on Season 9 of Shark Tank pitching ProntoBev, a 30-second wine chiller.</p>
+      </div>
+    </div>
+
+    <div class="ccatv-note">
+      <span class="eyebrow" style="display:block; margin-bottom:8px;">Featured on CCATV</span>
+      <p>UNITE's 2019 event was featured on CCATV (timestamp 5:07).</p>
+    </div>
+
+    <div class="subhead">
+      <span class="eyebrow">2017–2018 Speakers</span>
+      <h3>The very first UNITE lineup</h3>
+    </div>
+    <div class="bio-grid">
+      <div class="bio-card">
+        <h4>Sonja Bruzauskas</h4>
+        <p>A mezzo soprano trained on both sides of the Atlantic, with an expansive stage career in musical theater, opera, and operetta. Sonja is a well-established concert singer and recitalist who has performed and lectured at Vanderbilt, LSU, Rice University, CalArts, and the University of Houston, and is the founder of pARTnerschools, connecting students through the arts.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Lex Gillette</h4>
+        <p>A globally recognized Paralympic track and field athlete for Team USA, holding the world record in the long jump for totally blind athletes at 22 ft 1 in. A four-time Paralympic medalist, three-time world champion, and 18-time national champion, Lex is also a motivational speaker who has presented to Fortune 500 corporations and universities worldwide.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Annie Reilly</h4>
+        <p>A senior at Canyon Crest Academy who completed her yoga teacher certification (RYT 200) over the summer of 2017 and volunteers on campus teaching yoga to students and staff, aiming to bring awareness and presence to her students in an energizing, fun, and relaxing way.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Theo Zelkind</h4>
+        <p>A 17-year-old junior at CCA, born and raised in San Diego, passionate about making positive change in the world. Theo has spoken about his experience as a member of the LGBT+ and Jewish communities, sharing a message of love and unity with CCA UNITE.</p>
+      </div>
+      <div class="bio-card">
+        <h4>Kacee Jensen</h4>
+        <p>Founder of Let's Talk Teens, a resource hub helping parents and teens navigate the modern world. A youth advocate, speaker, writer, and mom of four, Kacee has spent 16 years helping families, schools, and communities across the country, and speaks nationally on behalf of Rachel's Challenge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap" style="text-align:center;">
+    <span class="eyebrow">Looking Ahead</span>
+    <h2 style="margin-top:14px; font-size:clamp(1.8rem,4vw,2.4rem);">This year, it's called Radiance</h2>
+    <p style="margin:16px auto 0;">CCA UNITE returns on September 25, 2026. Sign up on the home page to be the first to know.</p>
+    <div class="hero-ctas" style="margin-top:30px;">
+      <a class="btn" href="index.html#signup">Notify Me</a>
+      <a class="btn-outline" href="index.html">Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>CCA <span style="color:var(--gold);">UNITE</span></h3>
+        <p>A student-led, school-sponsored club bringing TEDx-style talks to our community, one spark at a time.</p>
+      </div>
+      <div class="footer-col">
+        <span class="eyebrow">Follow Along</span>
+        <div class="socials">
+          <a href="https://instagram.com/ccaunite" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3c.6 2.6 2.4 4.4 5 4.7V11c-1.8 0-3.5-.5-5-1.5v6.3A5.8 5.8 0 1 1 8.4 10v3.1a2.6 2.6 0 1 0 2 2.5V3h3.6z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <span class="eyebrow">Contact</span>
+        <a href="mailto:ccauniteofficial@gmail.com">ccauniteofficial@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 CCA UNITE. Made by students, for students.</span>
+      <span>Archive · Since 2017</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el=> io.observe(el));
+</script>
+
+</body>
+</html>
