@@ -195,10 +195,13 @@
     background:var(--bg-panel-2);
   }
   .speaker-avatar{
-    width:56px; height:56px; border-radius:50%; margin:0 auto 16px;
+    width:84px; height:84px; border-radius:50%; margin:0 auto 16px;
     background:linear-gradient(135deg, rgba(217,162,51,0.35), rgba(156,90,46,0.28));
     border:1px solid var(--line);
+    overflow:hidden;
   }
+  .speaker-avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .speaker-card h4{ margin:0 0 6px; font-size:1.05rem; }
   .speaker-card p{ font-size:0.85rem; }
 
   /* ---------- schedule teaser ---------- */
@@ -327,17 +330,19 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Lineup</span>
-      <h2>Speaker lineup coming soon</h2>
-      <p>We're finalizing this year's speakers. Check back soon to meet the people bringing Radiance to the stage.</p>
+      <h2>Meet This Year's Speakers</h2>
+      <p>Meet two of the voices bringing Radiance to the stage, with more to be announced soon.</p>
     </div>
     <div class="speaker-grid">
       <div class="speaker-card">
-        <div class="speaker-avatar"></div>
-        <p>Speaker TBA</p>
+        <div class="speaker-avatar"><img src="images/speakers/smera-karna.jpg" alt="Smera Karna"></div>
+        <h4>Smera Karna</h4>
+        <p>9th Grade &middot; Founder of Bicode. On the courage to be a beginner.</p>
       </div>
       <div class="speaker-card">
-        <div class="speaker-avatar"></div>
-        <p>Speaker TBA</p>
+        <div class="speaker-avatar"><img src="images/speakers/rohan-roy.jpg" alt="Rohan Roy"></div>
+        <h4>Rohan Roy</h4>
+        <p>11th Grade &middot; Cross country runner. On the contagious power of positivity.</p>
       </div>
       <div class="speaker-card">
         <div class="speaker-avatar"></div>
